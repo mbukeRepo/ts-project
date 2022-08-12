@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-class User {
+export default class User {
   name: String;
   location: {
     lat: number;

@@ -1,5 +1,6 @@
 import { faker } from "@faker-js/faker";
-export default class Company{
+import Mark from "./Mark";
+export default class Company implements Mark{
     companyName: string;
     catchPhrase: string;
     location: {

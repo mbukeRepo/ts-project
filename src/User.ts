@@ -1,5 +1,6 @@
 import { faker } from '@faker-js/faker';
-export default class User {
+import Mark from './Mark';
+export default class User implements Mark {
   name: String;
   location: {
     lat: number;

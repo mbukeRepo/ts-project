@@ -1,7 +1,11 @@
+import Mark from "./Mark";
+
+
+
 export default class CustomMap {
     private googleMap: google.maps.Map;
-    constructor(){
-        this.googleMap = new google.maps.Map(document.getElementById("map"), {
+    constructor(id: string){
+        this.googleMap = new google.maps.Map(document.getElementById(id), {
             zoom: 1,
             center: {
                 lat: 0,
@@ -9,7 +13,13 @@ export default class CustomMap {
             }
         });
     }
-    public addMarker() {
-
+    public addMarker(mark: Mark) {
+        const marker = new google.maps.Marker({
+            map:this.googleMap,
+            position: {
+                lat: mark.location.lat,
+                lng: mark.location.lng
+            }
+        });
     }
 }

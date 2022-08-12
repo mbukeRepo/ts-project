@@ -1,7 +1,5 @@
 import Mark from "./Mark";
 
-
-
 export default class CustomMap {
     private googleMap: google.maps.Map;
     constructor(id: string){
@@ -13,13 +11,19 @@ export default class CustomMap {
             }
         });
     }
-    public addMarker(mark: Mark) {
+    public addMarker(mark: Mark): void {
         const marker = new google.maps.Marker({
             map:this.googleMap,
             position: {
                 lat: mark.location.lat,
                 lng: mark.location.lng
             }
+        });
+        marker.addListener("click", () => {
+            const infoWindow = new google.maps.InfoWindow({
+                content: "Hello world"
+            })
+            infoWindow.open(this.googleMap, marker);
         });
     }
 }

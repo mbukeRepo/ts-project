@@ -21,7 +21,7 @@ export default class CustomMap {
         });
         marker.addListener("click", () => {
             const infoWindow = new google.maps.InfoWindow({
-                content: "Hello world"
+                content: mark.markerContent()
             })
             infoWindow.open(this.googleMap, marker);
         });

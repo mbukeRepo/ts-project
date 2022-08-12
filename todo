@@ -1,0 +1,8 @@
+install parcel-bundler
+npm install -g parcel-bundler
+
+install faker module to randomly generate username, company name and location
+npm install faker
+
+install type definition files for faker module
+npm install @types/faker
